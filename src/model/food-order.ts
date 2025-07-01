@@ -7,7 +7,7 @@ enum FoodOrderStatusEnum {
 }
 
 const foodOrderItemSchema = new Schema({
-  foodId: { type: Schema.Types.ObjectId, ref: "User", required: true },
+  foodId: { type: Schema.Types.ObjectId, ref: "Food", required: true },
   quantity: { type: Number, required: true },
 });
 

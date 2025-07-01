@@ -3,6 +3,7 @@ import { connectdb } from "./database/database";
 import foodCategoryRouter from "./router/foodCategory.router";
 import foodRouter from "./router/food.router";
 import userRouter from "./router/user.router";
+import foodOrderRouter from "./router/foodOrder.router";
 
 const app = express();
 app.use(express.json());
@@ -13,6 +14,8 @@ app.use("/category", foodCategoryRouter);
 app.use("/food", foodRouter);
 
 app.use("/user", userRouter);
+
+app.use("/order", foodOrderRouter);
 
 app.get(`/`, (req: Request, res: Response) => {
   res.send("Hello from food delivery");

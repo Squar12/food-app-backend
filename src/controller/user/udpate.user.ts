@@ -3,7 +3,7 @@ import User from "../../model/user";
 
 export const getUpdate = async (req: Request, res: Response) => {
   const { userId } = req.params;
-  const { email, password, phoneNumber, address, isVerified } = req.body;
+  const { email, password, phoneNumber, address } = req.body;
   try {
     const user = await User.findByIdAndUpdate(
       userId,
@@ -12,7 +12,6 @@ export const getUpdate = async (req: Request, res: Response) => {
         password: password,
         phoneNumber: phoneNumber,
         address: address,
-        isVerified: isVerified,
       },
       { new: true }
     );
